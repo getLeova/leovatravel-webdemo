@@ -1,0 +1,2170 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <!-- v3.0 21/9/2015 1:19pm -->
+    <title>Demo Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://leovaresource8.appspot.com/eframeworks/css/materialize.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Montserrat' rel='stylesheet' type='text/css' />
+    <link rel="apple-touch-icon" sizes="57x57" href="./favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+    <link rel="manifest" href="./favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+
+<div class="hide-on-med-and-down">
+<div class="bottom-cloud"></div>
+
+<div id="mic-holder" class="row">
+    <form action="javascript:submit()">
+    <div id="ip-text" class="valign-wrapper">
+        <input id="response_text" class="col s11 tooltipped" data-position="top" data-delay="50" data-tooltip="Press Enter to submit" />
+        <span id="alert_text" class="col s12 center-align">Click mic to stop recognizing...</span>
+    </div>
+    </form>
+    <div id="mic-bg"></div>
+    <img id="mic" src="./imgs/mic0.png" alt="mic" class="hoverable" onclick="toggle()"/>
+</div>
+<div id="powered-by-google-container" class="valign-wrapper">
+    <span>Speech-to-Text powered by &nbsp;</span>
+    <img src="./imgs/powered_by_google_on_white_hdpi.png" />
+</div>
+
+<div class="card-panel base-class one-way">
+    <div class="row" style="margin-bottom:0;">
+        <div class="col s12 left-align trip-card-title">
+            Trip1
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="row trip-card-row">
+        <div class="col s12 trip-card-text center-align"></div>
+    </div>
+    <div class="row trip-card-row  valign-wrapper" style="position:relative;">
+        <div class="divider to-divider"></div>
+        <div class="col s12  trip-card-to center-align"><i>&nbsp to &nbsp</i></div>
+    </div>
+    <div class="row trip-card-row">
+        <div class="col s12 trip-card-text center-align"></div>
+    </div>
+    <div class="row trip-card-row">
+        <div class="col s12 trip-card-date center-align"></div>
+    </div>
+</div>
+
+<div class="card-panel base-class two-way ">
+    <div class="row" style="margin-bottom:0;">
+        <div class="col s12 left-align trip-card-title">
+            Trip2
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="row trip-card-row">
+        <div class="col s12 trip-card-text center-align"></div>
+    </div>
+    <div class="row trip-card-row valign-wrapper" style="position:relative;">
+        <div class="divider to-divider"></div>
+        <div class="col s12  trip-card-to center-align"><i>&nbsp to &nbsp</i></div>
+    </div>
+    <div class="row trip-card-row">
+        <div class="col s12 trip-card-text center-align"></div>
+    </div>
+    <div class="row trip-card-row">
+        <div class="col s12 trip-card-date center-align"></div>
+    </div>
+</div>
+
+<div class="card-panel base-class multi-city">
+    <div class="row" style="margin-bottom:0;">
+        <div class="col s12 left-align trip-card-title">
+            Multi City Trip
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="row" style="margin:15px 0">
+        <div class="col s12 trip-card-text "></div>
+    </div>
+    <div class="row" style="margin:15px 0">
+        <div class="col s12 trip-card-text "></div>
+    </div>
+    <div class="row" style="margin:15px 0">
+        <div class="col s12 trip-card-text "></div>
+    </div>
+    <div class="row" style="margin:15px 0">
+        <div class="col s12 trip-card-text "></div>
+    </div>
+</div>
+
+    <div id="logo-container" class="center-align">
+        <img src="./imgs/leova-logo.png" />
+        <div style="font-size:0.8rem">powers this AI experience</div>
+    </div>
+
+<div id="passenger-card" class="card-panel  tooltipped" data-position="bottom" data-delay="50" data-tooltip="Passenger Details">
+    <div class="row" style="margin:0;">
+        <div id="passenger-detail"  class="col s12 trip-card-date center-align "></div>
+    </div>
+</div>
+<div id="hipmunk-card" class="card-panel site-card  hoverable">
+    <div class="row" style="margin:0;">
+        <div id="hipmunk_url" class="col s12 center-align "><a> See this on Hipmunk </a></div>
+    </div>
+</div>
+<div id="expedia-card" class="card-panel site-card hoverable">
+    <div class="row" style="margin:0;">
+        <div id="expedia-url" class="col s12 center-align "><a>See this on Expedia</a></div>
+    </div>
+</div>
+<div id="kayak-card" class="card-panel site-card hoverable">
+    <div class="row" style="margin:0;">
+        <div id="expedia-url" class="col s12 center-align "><a>See this on Kayak</a></div>
+    </div>
+</div>
+</div>
+<div id="hotel-card" class="card-panel hide-on-med-and-down">
+    <div id="hotel-title" class=" valign-wrapper">
+            <i id="bottom-arrow" class="material-icons">keyboard_arrow_up</i>See Hotels<i id="top-arrow" class="material-icons">keyboard_arrow_up</i>
+    </div>
+    <div class="row">
+        <div class="col s12 trip-card-text">
+           Hotels in <span id="hotel-city"></span>
+        </div>
+    </div>
+    <div class="row" style="margin:0;">
+        <div class="col s12" style="font-size:1.1rem;">
+            Dates
+        </div>
+    </div>
+    <div class="row valign-wrapper">
+        <div id="hotel-from" class="col s5" style="border:1px solid rgba(0,0,0,0.4);font-size:1rem;">
+            
+        </div>
+        <div class="col s2 trip-card-to center-align">
+            to
+        </div>
+        <div id="hotel-to" class="col s5 " style="border:1px solid rgba(0,0,0,0.4);font-size:1rem;">
+            
+        </div>
+    </div>
+    <div class="row">
+        <div id="hotel-passenger" class="col s12 center-align">for</div>
+    </div>
+    <div class="row">
+        <a id="book-now-btn" class="btn col s8 offset-s2" style="background-color:#3F6182;cursor:pointer;">Expedia Book</a>
+    </div>
+</div>
+
+<div id="allow-arrow" class="hide-on-med-and-down">
+    <img src="./imgs/arrow_final.png" />
+    <div id="allow-text">Click to Allow Voice</div>
+</div>
+
+<div id="pop_bubble" class="hide-on-med-and-down valign-wrapper">
+    <img id="pop_triangle" src="./imgs/bubble_triangle.png" />
+    <div style="width:100%" class="center-align"> Please Enable Pop-ups</div>
+</div>
+
+
+<div id="mobile" class=" hide-on-large-only">
+
+    <div id="mobile-heading">
+        <div id="mobile-logo-container" class=" valign-wrapper">
+            <img src="./imgs/leova-logo.png" />
+        </div>
+        <div id="mobile-trip-type-container" class="center-align">
+            <span id="mobile-trip-type">Flights</span>
+        </div>
+    </div>
+
+    <div id="container1" class="mobile-content-container">
+        <br />
+    <div class="container left-align">
+        <div class="row " style="margin:0;">
+            <div class="col s12" style="font-size:1.5rem;">
+                Demo: Booking Flights
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row" style="margin:10px 0;">
+            <div class="col s12 mobile-tips ">
+                We use Google’s speech recognition (accuracy ~ 92%) to do a basic speech-to-text conversion. But you can use any other
+            </div>
+        </div>
+        <div class="row" style="margin:10px 0;">
+            <div class="col s12  mobile-tips">
+                 Leova’s NLP AI works like speaking to a travel agent – it is conversational, you can go back and fix parts of your flight and you can speak naturally and without keywords (watch a demo)
+            </div>
+        </div>
+        <div class="row" style="margin:10px 0;">
+            <div class="col s12  mobile-tips">
+                When the speech recognizer makes a mistake, Leova tries to fix it using machine learning
+            </div>
+        </div>
+        <div class="row" style="margin:10px 0;">
+            <div class="col s12  mobile-tips">
+                If you’re trying to confuse Leova, you probably will succeed. So would a 5th grader J. The smarter version of Leova is a much much much more expensive deployment
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="container2" class="mobile-content-container hide">
+        <br />
+    <div class="container center-align">    
+        <br />
+            <div class="row mobile-city-row">
+                <div class="col s10 offset-s1">
+                    <div id="mobile-one-way-from" class="mobile-city-div mobile-heading-text">
+                        Mumbai (BOM)
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin:0;">
+                <div class="col s8 offset-s2 ">
+                    <div class="mobile-to-div">
+                        <div class="divider"></div>
+                        <i>&nbsp to &nbsp </i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div id="mobile-one-way-to" class="mobile-city-div mobile-heading-text">
+                        Goa (GOI)
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div  id="mobile-one-way-date" class="col s12 mobile-travel-date">
+                    on Sep 12, '15
+                </div>
+            </div>
+            <div class="row">
+                <div id="mobile-one-way-passenger" class="col s12 mobile-passenger">
+                    for 2 adults
+                </div>
+            </div>
+    </div>
+    </div>
+
+    <div id="container3" class="mobile-content-container hide">
+        <br />
+    <div class="container center-align">    
+            <div class="row mobile-city-row">
+                <div class="col s12">
+                    <div id="mobile-two-way-from" class="mobile-city-div mobile-heading-text truncate">
+                         (BOM) Mumbai
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin:0;">
+                <div class="col s8 offset-s2">
+                    <div class="mobile-to-div">
+                        <div class="divider"></div>
+                        <i>&nbsp to &nbsp </i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <div id="mobile-two-way-to" class="mobile-city-div mobile-heading-text truncate">
+                         (THR) Thiruvananthapuram
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div id="mobile-two-way-date1" class="col s12 mobile-travel-date">
+                    leaving Sep 12, '15
+                </div>
+                <div id="mobile-two-way-date2" class="col s12 mobile-travel-date">
+                    back on Sep 12, '15
+                </div>
+            </div>
+            <div class="row">
+                <div id="mobile-two-way-passenger" class="col s12 mobile-passenger">
+                    for 2 adults and 2 children
+                </div>
+            </div>
+    </div>
+    </div>
+
+    <div id="container4" class="mobile-content-container hide ">
+        <br />
+    <div class="container center-align">
+     <ul id="staggered-multi-city-row0">
+        <li class="" style="transform: translateX(0px); opacity: 0;">          
+            <div id="mobile-multi-city-row0" class="row hide">
+                <div class="col s10 offset-s1 mobile-multi-city-div valign-wrapper">
+                    <div id="mobile-multi-city0" class=" col s7">
+                         
+                    </div>
+                    <div id="mobile-multi-city-date0" class="col s4 offset-s1 mobile-multi-city-date">
+                         
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+     <ul id="staggered-multi-city-row1">
+        <li class="" style="transform: translateX(0px); opacity: 0;">          
+            <div id="mobile-multi-city-row1" class="row hide">
+                <div class="col s10 offset-s1 mobile-multi-city-div valign-wrapper">
+                    <div id="mobile-multi-city1" class=" col s7">
+                         
+                    </div>
+                    <div id="mobile-multi-city-date1" class="col s5 mobile-multi-city-date">
+                         
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+     <ul id="staggered-multi-city-row2">
+        <li class="" style="transform: translateX(0px); opacity: 0;">          
+            <div id="mobile-multi-city-row2" class="row hide">
+                <div class="col s10 offset-s1 mobile-multi-city-div valign-wrapper">
+                    <div id="mobile-multi-city2" class=" col s7">
+                         BOM - HYD
+                    </div>
+                    <div id="mobile-multi-city-date2" class="col s5 mobile-multi-city-date">
+                         Sep 20, 2015
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+     <ul id="staggered-multi-city-row3">
+        <li class="" style="transform: translateX(0px); opacity: 0;">          
+            <div id="mobile-multi-city-row3" class="row hide">
+                <div class="col s10 offset-s1 mobile-multi-city-div valign-wrapper">
+                    <div id="mobile-multi-city3" class=" col s7">
+                         
+                    </div>
+                    <div id="mobile-multi-city-date3" class="col s5 mobile-multi-city-date">
+                         
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+     <ul id="staggered-multi-city-row4">
+        <li class="" style="transform: translateX(0px); opacity: 0;">          
+            <div id="mobile-multi-city-row4" class="row hide">
+                <div class="col s10 offset-s1 mobile-multi-city-div valign-wrapper">
+                    <div id="mobile-multi-city4" class=" col s7">
+                         
+                    </div>
+                    <div id="mobile-multi-city-date4" class="col s5 mobile-multi-city-date">
+                         
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+            <div class="row">
+                <div id="mobile-multi-city-passenger" class="col s12 mobile-passenger hide">
+                </div>
+            </div>
+    </div>
+    </div>
+    <div id="container5" class="mobile-content-container hide">
+        <br />
+    <div class="container left-align">
+        <div class="row " style="margin:0;">
+            <div id="error-title" class="col s12" style="font-size:1.5rem;">
+                Error
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row" style="margin:10px 0;">
+            <div id="error-text" class="col s12 mobile-tips ">
+                
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="mobile-mic-holder" onclick="mobile_toggle()">
+        <img id="mobile-mic" src="./imgs/mic0.png" />
+    </div>
+
+    <div id="mobile-hotel" class="card-panel center-align" onclick="mobile_hotel_card()">
+       <div id="mobile-hotel-heading" class="valign-wrapper">
+           <div class="center-block">
+               <i id="mobile-left-arrow" class="material-icons">keyboard_arrow_up</i> See Hotels <i id="mobile-right-arrow" class="material-icons">keyboard_arrow_up</i>
+            </div>  
+        </div>
+        <div class="row container">
+            <div class="col s12">
+                Hotels in <span id="mobile-hotel-city">Goa</span>
+            </div>
+            <div class="col s12 left-align">
+                Dates
+            </div>
+            <div id="mobile-hotel-date1" class="col s5 mobile-hotel-date">
+                Sep 12, '15
+            </div>
+            <div class="col s2">
+                to
+            </div>
+            <div id="mobile-hotel-date2" class="col s5 mobile-hotel-date">
+                Sep 12, '15
+            </div>
+        </div>
+        <div class="row" >
+            <div id="mobile-hotel-passenger" class="col s12 mobile-hotel-passenger">
+                for 2 adults and 2 children
+            </div>
+        </div>
+        <div class="row">
+            <a class="btn col s6 offset-s3">BOOK NOW</a>
+        </div>
+    </div>
+    
+    <div id="mobile-user-speech-modal" class="card-panel">
+        <div id="mobile-user-speech" class="container">"I'm looking for a flight from Mumbai to Pune tommorrow and back on Sunday I'm looking for a flight from Mumbai to Pune tommorrow and back on Sunday "</div>
+    <br />
+    <div class="row">
+        <div id="mobile-powered-by-container" class="valign-wrapper col s12">
+            Speech-to-Text &nbsp;
+            <img src="./imgs/powered_by_google_on_white_hdpi.png" />
+        </div>
+    </div>
+        <div id="mobile-user-speech-icon" onclick="close_user_speech()">
+            <i class="material-icons">keyboard_arrow_up</i>
+        </div>
+    </div>
+
+    <div id="mobile-mic-modal" onclick="modal_mic_clicked()">
+        <img id="modal-mic" src="./imgs/mic0.png" />
+        <div id="mobile-alert"><b>Click when you're done speaking</b></div>
+    </div>
+</div>
+
+<style>
+
+    html, body{
+        height:100%;
+        width:100%;
+        margin:0;
+        padding:0;
+
+        overflow:hidden;
+        font-family:Montserrat;
+    }
+
+    @media screen and (min-width:900px){
+        html, body{
+        background: -webkit-linear-gradient(#143D64, #F0F6FA);
+        background: -moz-linear-gradient(#143D64, #F0F6FA);
+        }
+    }
+
+    .xborder {
+        border:1px solid black;
+    }   
+
+    #powered-by-google-container {
+        position:absolute;
+        bottom:0.8rem;
+        left:6%;
+        height:2rem;
+        opacity:0;
+        transition:opacity 0.7s linear;
+    }
+
+    #powered-by-google-container img {
+        height:44%;
+    }
+
+
+    #powered-by-google-container span{
+        color:gray;
+        font-family:Montserrat;
+        font-size:75%;
+    }
+
+    #ip-text{
+        position:absolute;
+        width:0;
+        margin-top:20%;
+        height:60%;
+        right:50%;
+        box-shadow: 0 0 10px rgba(0,0,0,0.4);
+        background-color:white;
+        border-radius:10px;
+        transition:width 0.5s linear;
+        overflow:hidden;
+    }
+
+    #response_text {
+     font-size:2em;   
+     outline:none;
+     border:none;
+    }
+
+    #alert_text {
+        color:red;
+        text-align:center;
+        opacity:0;
+        font-size:3rem;
+        animation: 1.5s linear infinite;
+    }
+
+    @keyframes text-flash {
+        0% {opacity:0;}
+        50% {opacity:1;}
+        51% {opacity:0.9;}
+        100% {opacity:0;}
+    }
+
+    #mic-holder {
+        position:absolute;
+        background-color: transparent;
+        border-radius:390px;
+        top:calc(98% - 10rem);
+        right:2rem;
+        height:10rem;
+        width:10rem;
+        cursor:pointer;
+        animation: 1s infinite alternate;
+        background-color:lightgray;
+    }
+
+    @keyframes border-pulse {
+        0% {background-color:white;}
+        100% {background-color:#FF4444;}
+    }
+
+    #mic-holder img {
+        position:absolute;
+        width:10rem;
+        height:10rem;
+        top:0;
+        left:0;
+        border-radius:290px;
+        animation: 1.5s linear infinite;
+    }
+
+    @keyframes mic-visibility {
+        0% {opacity:0;}
+        50% {opacity:1;}
+        51% {opacity:0.9;}
+        100% {opacity:0;}
+
+    }
+
+    #mic-bg {
+        position:absolute;
+        width:10rem;
+        height:10rem;
+        border-radius:390px;
+        top:0;
+        left:0;
+        background:white;
+    }
+    .bottom-cloud {
+        position:absolute;
+        bottom:0;
+        height:20rem;
+        width:100%;
+        background:url("./imgs/ccc.png");
+        background-repeat:repeat-x;
+        animation:cloud-slide 20s linear infinite;
+    }
+
+    @keyframes cloud-slide {
+        0%{background-position-x:-1300px;}
+        100%{background-position-x:1300px;}
+    }
+
+    
+    #input-holder {
+        position:absolute;
+        height:7rem;
+        border:1px solid black;
+        top:-30%;
+        font-size:2rem;
+        padding:0 0.5rem;
+        border-radius:10px;
+        background-color:white;
+        transition:top 0.5s,left 0.5s;
+    }
+
+    #send-icon {
+        font-size:3rem;
+        transition:color 0.4s;
+    }
+
+    #go{
+        width:5rem;
+        height:5rem;
+        padding-top:0.6rem;
+        transition:background-color 0.4s;
+    }
+
+    .base-class {
+        position:absolute;
+        height:auto;
+        top:-65%;
+        border-radius:10px;
+        transition:all 0.7s;
+    }
+
+    .trip-card-title {
+        font-size:2rem;
+        color:#FB6909;
+    }
+
+    .trip-card-text {
+        font-size:1.5rem;
+    }
+
+    .trip-card-date {
+        font-size:1rem;
+        color:rgba(0,0,0,0.4);
+    }
+
+    .to-divider{
+        position:absolute;
+        width:20%;
+        margin-left:40%;
+        top:50%;
+    }
+
+    .trip-card-to {
+        font-size:1rem;
+        position:relative;
+    }
+    
+    .trip-card-to i {
+        background:white;
+    }
+
+    .trip-card-row {
+        margin-top:10px;
+    }
+
+    .one-way {
+        left:38%;
+        width:20%;
+    }
+
+    .two-way {
+        left:57%;
+        width:20%;
+    }
+
+    .multi-city {
+        left:30%;
+        width:auto;
+    }
+
+    #allow-arrow {
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,0.5);
+        display:none;
+    }
+
+    #allow-arrow img {
+        position:absolute;
+        left:243px;
+        top:116px;
+        height:220px;
+        width:200px;
+    }
+
+
+    #allow-text {
+        position:absolute;
+        width:250px;
+        text-align:center;
+        left:400px;
+        top:265px;
+        color:white;
+        font-family:'Trebuchet MS';
+        font-size:3rem;
+    }
+
+    
+    #logo-container {
+        position: absolute;
+        height: 75px;
+        left: 1rem;
+        top: 1rem;
+        font-size: 0.8rem;
+        color: white;
+    }
+
+        #logo-container img {
+            height: 65px;
+        }
+
+
+    #passenger-card {
+        position:absolute;
+        height:auto;
+        width:15rem;
+        top:-15%;
+        right:2%;
+        border-radius:10px;
+        transition:all 0.3s;
+    }
+    #passenger-card i{
+        cursor:pointer;
+    }
+
+
+    #pop_bubble{
+        width:20%;
+        height:20%;
+        background-color:white;
+        font-size:1.2rem;
+        color:black;
+        position:absolute;
+        left:75%;
+        top:35%;
+        border-radius:20px;
+        opacity:0;
+        transition:all 0.3s;
+    }
+
+    #pop_triangle{
+        position:absolute;
+        height:30%;
+        opacity:0;
+        top:92%;
+        transition:all 0.3s;
+        }
+
+    .site-card {
+        position: absolute;
+        height: auto;
+        width:18rem;
+        top:60%;
+        font-size:1.2rem;
+        border-radius:0;
+        transition: all 0.3s;
+        cursor:pointer;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.9);
+    }
+
+    
+
+    #hipmunk-card {
+        left: -25%;
+    }
+
+    .hipmunk-bounce {
+      -webkit-animation:bounce_hipmunk 2s 1;
+      -moz-animation:bounce_hipmunk 2s 1;
+      -o-animation:bounce_hipmunk 2s 1;
+      animation:bounce_hipmunk 0.2s 1;
+      animation-delay:0.2s;
+      -webkit-animation-delay:0.2s;
+      -o-animation-delay:0.2s;
+      -moz-animation-delay:0.2s;
+    }
+
+    @-webkit-keyframes  bounce_hipmunk{
+        0%{left:15%;}
+        25%{left:14%;}
+        50%{left:15%;}
+        75%{left:14.5%;}
+        100%{left:15%;}
+    }
+    @-moz-keyframes  bounce_hipmunk{
+        0%{left:15%;}
+        25%{left:14%;}
+        50%{left:15%;}
+        75%{left:14.5%;}
+        100%{left:15%;}
+    }
+    @-o-keyframes  bounce_hipmunk{
+        0%{left:15%;}
+        25%{left:14%;}
+        50%{left:15%;}
+        75%{left:14.5%;}
+        100%{left:15%;}
+    }
+    @keyframes bounce_hipmunk {
+        0%{left:15%;}
+        25%{left:14%;}
+        50%{left:15%;}
+        75%{left:14.5%;}
+        100%{left:15%;}
+    }
+
+
+    #expedia-card {
+        left:-25%;
+    }
+
+    .expedia-bounce {
+      -webkit-animation:bounce_expedia 2s 1;
+      -moz-animation:bounce_expedia 2s 1;
+      -o-animation:bounce_expedia 2s 1;
+      animation:bounce_expedia 0.2s 1;
+      animation-delay:0.2s;
+      -webkit-animation-delay:0.2s;
+      -o-animation-delay:0.2s;
+      -moz-animation-delay:0.3s;
+    }
+
+    @-webkit-keyframes  bounce_expedia{
+        0%{left:40%;}
+        25%{left:39%;}
+        50%{left:40%;}
+        75%{left:39.5%;}
+        100%{left:40%;}
+    }
+    @-moz-keyframes  bounce_expedia{
+        0%{left:40%;}
+        25%{left:39%;}
+        50%{left:40%;}
+        75%{left:39.5%;}
+        100%{left:40%;}
+    }
+    @-o-keyframes  bounce_expedia{
+        0%{left:40%;}
+        25%{left:39%;}
+        50%{left:40%;}
+        75%{left:39.5%;}
+        100%{left:40%;}
+    }
+    @keyframes bounce_expedia {
+        0%{left:40%;}
+        25%{left:39%;}
+        50%{left:40%;}
+        75%{left:39.5%;}
+        100%{left:40%;}
+    }
+
+
+
+
+    #kayak-card {
+        left:-25%;
+    }
+
+
+    .kayak-bounce {
+      -webkit-animation:bounce_kayak 2s 1;
+      -moz-animation:bounce_kayak 2s 1;
+      -o-animation:bounce_kayak 2s 1;
+      animation:bounce_kayak 0.2s 1;
+      animation-delay:0.2s;
+      -webkit-animation-delay:0.2s;
+      -o-animation-delay:0.2s;
+      -moz-animation-delay:0.2s;
+    }
+
+    @-webkit-keyframes  bounce_kayak{
+        0%{left:65%;}
+        25%{left:64%;}
+        50%{left:65%;}
+        75%{left:64.5%;}
+        100%{left:65%;}
+    }
+    @-moz-keyframes  bounce_kayak{
+        0%{left:65%;}
+        25%{left:64%;}
+        50%{left:65%;}
+        75%{left:64.5%;}
+        100%{left:65%;}
+    }
+    @-o-keyframes  bounce_kayak{
+        0%{left:65%;}
+        25%{left:64%;}
+        50%{left:65%;}
+        75%{left:64.5%;}
+        100%{left:65%;}
+    }
+    @keyframes bounce_kayak {
+        0%{left:65%;}
+        25%{left:64%;}
+        50%{left:65%;}
+        75%{left:64.5%;}
+        100%{left:65%;}
+    }
+
+
+
+    #hotel-card {
+        position:relative;
+        height:auto;
+        width:20rem;
+        top:15%;
+        left:110%;
+        border-top-right-radius:0;
+        border-top-left-radius:10px;
+        border-bottom-left-radius:10px;
+        border-bottom-right-radius:0;
+        padding:10px;
+        transition:all 0.3s;
+        cursor:pointer;
+        border-left:2.5rem solid #FC8B41;
+    }
+
+    #book-now-btn {
+        cursor:pointer;
+    }
+
+    #hotel-title {
+        position: absolute;
+        left: -10rem;
+        top: 14%;
+        transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        color: white;
+        font-size: 1rem;
+        width: 100%;
+        height: 2rem;
+    }
+
+    #hotel-title i{
+        transition:all 0.3s;
+    }
+
+    #close-icon-holder {
+        position:absolute;
+        top:-30%;
+        right:-10%;
+        border:2px solid white;
+        width:2rem;
+        height:2rem;
+        border-radius:5rem; 
+    }
+
+    #close-icon-holder i{
+        font-size:1.7rem;
+        color:white;
+        cursor:pointer;
+    }
+</style>
+
+<style>
+    /****MOBILE CSS*/
+    #mobile {
+        height:100%;
+        width:100%;
+    }
+    #mobile-heading {
+        position:relative;
+        width:100%;
+        height:5rem;
+        background-color:#3F6182;
+    }
+
+    #mobile-logo-container {
+        position:absolute;
+        top:0;
+        left:0;
+        height:100%;
+        width:10rem;
+        padding-left:1rem;
+        overflow:hidden;
+    }
+
+    #mobile-logo-container img {
+        width:80%;
+    }
+
+    #mobile-trip-type-container {
+        position:absolute;
+        top:0;
+        right:0;
+        height:100%;
+        width:10rem;
+        padding-top:1.5rem;
+    }
+
+    #mobile-trip-type {
+        font-size:1.5rem;
+        color:white;
+        font-style:italic;
+    }
+
+    #mobile-mic-holder {
+        position:absolute;
+        bottom:1rem;
+        right:1rem;
+        height:5rem;
+        width:5rem;
+    }
+
+    #mobile-mic-holder img {
+        position:absolute;
+        height:100%;
+    }
+
+    #mobile-mic-modal {
+        height:100%;
+        width:100%;
+        position:absolute;
+        background:rgba(0,0,0,0.9);
+    }
+
+    #modal-mic {
+        position:absolute;
+        height:40%;
+        top:calc(50% - 15rem);
+        left:calc(50% - 8rem);
+        animation: 1.5s linear infinite;
+    }
+    @keyframes modal-mic-visibility {
+        0% {opacity:0.5;}
+        50% {opacity:1;}
+        51% {opacity:0.9;}
+        100% {opacity:0.5;}
+
+    }
+    #mobile-alert {
+        position:absolute;
+        font-size:3rem;
+        height:5rem;
+        width:100%;
+        text-align:center;
+        bottom:30%;
+        color:red;
+        padding:1rem;
+        animation:mobile-text-flash 1.5s infinite;
+    }
+    @keyframes mobile-text-flash {
+        0% {opacity:0;}
+        50% {opacity:1;}
+        51% {opacity:0.9;}
+        100% {opacity:0;}
+    }
+
+    .mobile-content-container {
+        position:relative;
+        width:100%;
+        height:100%;
+    }
+
+    .mobile-tips {
+        font-size:1rem;
+    }
+
+    .mobile-city-div {
+        border:1px solid rgba(0,0,0,0.5);
+    }
+
+    .mobile-to-div {
+        height: 5rem;
+        font-size: 1.2rem;
+        position: relative;
+        padding-top: 1.5rem;
+    }
+
+    .mobile-to-div div {
+        width: 40%;
+        position: absolute;
+        top: 2.5rem;
+        left: 30%;
+        background-color: rgba(0,0,0,0.7);
+    }
+
+    .mobile-to-div i{
+        position: absolute;
+        left: 40%;
+        background-color: white;
+        width: 20%;
+    }
+
+    .mobile-city-row {
+        height:2rem;
+    }
+
+    .mobile-heading-text {
+        font-size:1.5rem;
+        height:5rem;
+        padding-top:1.2rem;
+    }
+
+    .mobile-content-text  {
+        font-size:1.2rem;
+    }
+
+    
+    .mobile-passenger {
+        color:rgba(0,0,0,0.7);
+        font-size:1.5rem;
+        font-style:italic;
+    }
+
+    .mobile-hotel-passenger {
+        color:rgba(0,0,0,0.7);
+        font-size:90%;
+        font-style:italic;
+    }
+
+    #mobile-hotel {
+        position:absolute;
+        height:60%;
+        top:100%;
+        width:15rem;
+        border-top:4rem solid #FC8B41;
+        border-radius:10px;
+        padding:0;
+        font-size:1.5rem;
+        transition:all 0.2s linear;
+    }
+
+    .mobile-travel-date {
+        font-size:1.5rem;
+    }
+
+    #mobile-hotel-heading {
+        position:absolute;
+        padding-left:0;
+        width:100%;
+        top:-4rem;
+        color:white;
+        font-size:1.5rem;
+        height:4rem;
+    }
+
+    #mobile-hotel-heading i{
+        margin:0 0.3rem;
+        transition:transform 0.2s linear;
+    }
+
+    .mobile-hotel-date {
+        border:1px solid rgba(0,0,0,0.4);
+    }
+
+    #mobile-user-speech-modal{
+        position:absolute;
+        top:-80%;
+        height:60%;
+        width:100%;
+        box-shadow:0 20px 10px rgba(0,0,0,0.5);
+        transition:top 0.5s linear;
+    }
+    
+    #mobile-user-speech {
+        position:absolute;
+        width:90%;
+        font-size:1.7rem;
+        text-align:left;
+        max-height:70%;
+        word-break:break-word;
+        overflow:auto;
+    }
+
+    #mobile-powered-by-container {
+        position:absolute;
+        font-size:15px;
+        bottom:1.5rem;
+    }
+    #mobile-powered-by-container img {
+        height:1.5rem;
+    }
+
+    #mobile-user-speech-icon {
+        position:absolute;
+        bottom:-1rem;
+        left:calc(50% - 1rem);
+        width:2rem;
+        height:2rem;
+        border:1px solid black;
+        background-color:white;
+        text-align:center;
+    }
+
+    .mobile-multi-city-div {
+        font-size:1.5rem;
+        height:3.8rem;
+        border:1px solid rgba(0,0,0,0.5);
+    }
+
+    .mobile-multi-city-date {
+        font-size:1.2rem;
+    }
+</style>
+
+<script>
+    // Enter your api key and endpoint here
+    window.api_key = "";
+    window.endpoint = "";
+
+
+    window.mobile_hotel_card_toggle = true;
+
+    function modal_mic_clicked() {
+        
+        setTimeout(mobile_toggle(), 1000);
+        setTimeout(mobile_submit(),2000);
+    }
+
+    function mobile_hotel_card() {
+        if (window.mobile_hotel_card_toggle == false) {
+            document.getElementById("mobile-hotel").style.top = "calc(100% - 4rem)";
+            document.getElementById("mobile-hotel").style.width = "15rem";
+            document.getElementById("mobile-left-arrow").style.transform = "rotate(0deg)";
+            document.getElementById("mobile-right-arrow").style.transform = "rotate(0deg)";
+            window.mobile_hotel_card_toggle = true;
+        }
+        else
+        {
+            document.getElementById("mobile-hotel").style.top = "40%";
+            document.getElementById("mobile-hotel").style.width = "100%";
+            document.getElementById("mobile-left-arrow").style.transform = "rotate(180deg)";
+            document.getElementById("mobile-right-arrow").style.transform = "rotate(180deg)";
+            window.mobile_hotel_card_toggle = false;
+        }
+        
+    }
+
+    function close_user_speech() {
+        document.getElementById("mobile-user-speech-modal").style.top = "-80%";
+    }
+
+
+    function mobile_submit() {
+        setTimeout(function () {
+            document.getElementById("mobile-user-speech-modal").style.top = "-1rem";
+            var user_speech = mobile_saidResult;
+            var tzo = new Date().getTimezoneOffset();
+            var channel_id = window.unique_key;
+
+            var data = JSON.stringify({
+                "q": user_speech,
+                "api_key": window.api_key,
+                "channel": channel_id,
+                "tzo": tzo
+            });
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", window.endpoint);
+            xhr.setRequestHeader("content-type", "application/json");
+            xhr.send(data);
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    var jresp = xhr.responseText;
+                    console.log(jresp);
+                    window.resp = JSON.parse(jresp);
+                    var resp = window.resp;
+                    if (jQuery.isEmptyObject(window.resp["error_dict"])) {
+                        if (resp["FlightType"] == "One-Way") {
+                            document.getElementById("mobile-hotel").style.top = "calc(100% - 4rem)";
+                            console.log("one-way");
+                            document.getElementById("mobile-trip-type").textContent = resp["FlightType"];
+                            document.getElementById("container1").classList.add("hide");
+                            document.getElementById("container2").classList.remove("hide");
+                            document.getElementById("container3").classList.add("hide");
+                            document.getElementById("container4").classList.add("hide");
+                            document.getElementById("container5").classList.add("hide");
+                            var from_city = resp["trips"][0]["from_city_name"];
+                            document.getElementById("mobile-one-way-from").textContent = to_title(from_city) + " (" + resp["trips"][0]["from_city_code"] + ")";
+                            var to_city = resp["trips"][0]["to_city_name"];
+                            document.getElementById("mobile-one-way-to").textContent = to_title(to_city) + " (" + resp["trips"][0]["to_city_code"] + ")";
+                            var trip_date1 = resp["trips"][0]["date1"];
+                            trip_date1 = trip_date1.replace(" 2015", ", '15");
+                            trip_date1 = trip_date1.replace(" 2016", ", '16");
+                            document.getElementById("mobile-one-way-date").textContent = "on " + trip_date1;
+
+                            var text_str = resp["text"];
+                            var passenger_str = text_str.substr(text_str.indexOf('">') + 2);
+
+                            var passenger = passenger_str.substr(0, passenger_str.indexOf("<"));
+                            if (passenger.search(":") > -1) {
+                                passenger = passenger.substr(passenger.indexOf(":") + 1, passenger.length);
+                            }
+                            document.getElementById("mobile-one-way-passenger").textContent = "for " + passenger;
+                            var hotel_destination = resp["hotel_dict"]["destination"];
+                            var hotel_date1 = resp["hotel_dict"]["from_date"];
+                            var hotel_date2 = resp["hotel_dict"]["to_date"];
+                            hotel_date1 = hotel_date1.substr(4, hotel_date1.length);
+                            hotel_date1 = hotel_date1.replace(" 2015", ", '15");
+                            hotel_date1 = hotel_date1.replace(" 2016", ", '16");
+                            hotel_date2 = hotel_date2.substr(4, hotel_date2.length);
+                            hotel_date2 = hotel_date2.replace(" 2015", ", '15");
+                            hotel_date2 = hotel_date2.replace(" 2016", ", '16");
+                            passenger = passenger.replace(" passengers", "s");
+                            passenger = passenger.replace(" passenger", "");
+                            document.getElementById("mobile-hotel-city").textContent = to_title(hotel_destination);
+                            document.getElementById("mobile-hotel-date1").textContent = hotel_date1;
+                            document.getElementById("mobile-hotel-date2").textContent = hotel_date2;
+                            document.getElementById("mobile-hotel-passenger").textContent = "for " + passenger;
+
+                        }
+
+                        if (resp["FlightType"] == "Multi-City") {
+                            document.getElementById("mobile-hotel").style.top = "100%";
+                            console.log("multi-way");
+                            document.getElementById("mobile-trip-type").textContent = resp["FlightType"];
+                            document.getElementById("container1").classList.add("hide");
+                            document.getElementById("container2").classList.add("hide");
+                            document.getElementById("container3").classList.add("hide");
+                            document.getElementById("container4").classList.remove("hide");
+                            document.getElementById("container5").classList.add("hide");
+                            var trips_list = resp["trips"];
+                            for (var i = 0; i < trips_list.length ; i++) {
+                                document.getElementById("mobile-multi-city-row" + i).classList.remove("hide");
+                                if (i > 4) {
+                                    break;
+                                }
+                                var from_city_code = trips_list[i]["from_city_code"];
+                                var to_city_code = trips_list[i]["to_city_code"];
+                                var date1 = trips_list[i]["date1"];
+                                date1 = date1.substr(4, date1.length);
+                                document.getElementById("mobile-multi-city" + i).textContent = from_city_code + " - " + to_city_code;
+                                document.getElementById("mobile-multi-city-date" + i).textContent = date1;
+                            }
+                            var text_str = resp["people_dict"];
+                            var adult_count = text_str["adult"];
+                            var child_count = text_str["child"];
+
+                            if (adult_count > 1) {
+                                var adult_text = adult_count + " adults";
+                            }
+                            else {
+                                var adult_text = adult_count + " adult";
+                            }
+                            if (child_count > 1) {
+                                var child_text = " and " + child_count + " children";
+                            }
+                            else if (child_count == 1) {
+                                var child_text = " and " + child_count + " child";
+                            }
+                            else {
+                                var child_text = "";
+                            }
+
+                            document.getElementById("mobile-multi-city-passenger").textContent = "for " + adult_text + child_text;
+                        }
+                        else {
+                            if (resp["FlightType"] == "Return") {
+                                document.getElementById("mobile-hotel").style.top = "calc(100% - 4rem)";
+                                console.log("two-way");
+                                document.getElementById("mobile-trip-type").textContent = resp["FlightType"];
+                                document.getElementById("container1").classList.add("hide");
+                                document.getElementById("container2").classList.add("hide");
+                                document.getElementById("container3").classList.remove("hide");
+                                document.getElementById("container4").classList.add("hide");
+                                document.getElementById("container5").classList.add("hide");
+                                var from_city = resp["trips"][0]["from_city_name"];
+                                document.getElementById("mobile-two-way-from").textContent = to_title(from_city) + " (" + resp["trips"][0]["from_city_code"] + ")";
+                                var to_city = resp["trips"][0]["to_city_name"];
+                                document.getElementById("mobile-two-way-to").textContent = to_title(to_city) + " (" + resp["trips"][0]["to_city_code"] + ")";
+                                var trip_date1 = resp["trips"][0]["date1"];
+                                trip_date1 = trip_date1.replace(" 2015", ", '15");
+                                trip_date1 = trip_date1.replace(" 2016", ", '16");
+                                document.getElementById("mobile-two-way-date1").textContent = "leaving on " + trip_date1;
+
+                                var trip_date2 = resp["trips"][0]["date2"];
+                                trip_date2 = trip_date2.replace(" 2015", ", '15");
+                                trip_date2 = trip_date2.replace(" 2016", ", '16");
+                                document.getElementById("mobile-two-way-date2").textContent = "back on " + trip_date2;
+
+                                var text_str = resp["text"];
+                                var passenger_str = text_str.substr(text_str.indexOf('">') + 2);
+
+                                var passenger = passenger_str.substr(0, passenger_str.indexOf("<"));
+                                if (passenger.search(":") > -1) {
+                                    passenger = passenger.substr(passenger.indexOf(":") + 1, passenger.length);
+                                }
+                                document.getElementById("mobile-two-way-passenger").textContent = "for " + passenger;
+                                var hotel_destination = resp["hotel_dict"]["destination"];
+                                var hotel_date1 = resp["hotel_dict"]["from_date"];
+                                var hotel_date2 = resp["hotel_dict"]["to_date"];
+                                hotel_date1 = hotel_date1.substr(4, hotel_date1.length);
+                                hotel_date1 = hotel_date1.replace(" 2015", ", '15");
+                                hotel_date1 = hotel_date1.replace(" 2016", ", '16");
+
+                                hotel_date2 = hotel_date2.substr(4, hotel_date2.length);
+                                hotel_date2 = hotel_date2.replace(" 2015", ", '15");
+                                hotel_date2 = hotel_date2.replace(" 2016", ", '16");
+                                passenger = passenger.replace(" passengers", "s");
+                                passenger = passenger.replace(" passenger", "");
+                                document.getElementById("mobile-hotel-city").textContent = to_title(hotel_destination);
+                                document.getElementById("mobile-hotel-date1").textContent = hotel_date1;
+                                document.getElementById("mobile-hotel-date2").textContent = hotel_date2;
+                                document.getElementById("mobile-hotel-passenger").textContent = "for " + passenger;
+                            }
+                        }
+                    }
+                    else {
+                        document.getElementById("mobile-trip-type").textContent = "Error"
+                        document.getElementById("container1").classList.add("hide");
+                        document.getElementById("container2").classList.add("hide");
+                        document.getElementById("container3").classList.add("hide");
+                        document.getElementById("container4").classList.add("hide");
+                        document.getElementById("container5").classList.remove("hide");
+                        var error_code = resp["error_dict"];
+                        var error_msg = resp["error_message"];
+                        document.getElementById("error-title").textContent = "Error " + error_code;
+                        document.getElementById("error-text").textContent = error_msg;
+                    }
+                }
+            };
+        }, 1000);
+
+        setTimeout(function () {
+            close_user_speech();
+                var ul_iterator = 0;
+                var si = setInterval(function () {
+                    if (ul_iterator > 4) { clearInterval(si); }
+                    else {
+                        Materialize.showStaggeredList('#staggered-multi-city-row' + ul_iterator);
+                        ul_iterator++;
+                        document.getElementById("mobile-multi-city-passenger").classList.remove("hide");
+                    }
+                }, 500)
+        }, 5000);
+    }
+
+
+
+
+    function mobile_stop_voice() {
+        mobile_recognizing = false;
+        mobile_recognizer.stop();
+        clearInterval(window.mic_timer);
+            document.getElementById("modal-mic").style.animationName = "";
+            document.getElementById("mobile-mic-modal").style.top = "100%";
+            document.getElementById("modal-mic").setAttribute("src", "./imgs/mic0.png");
+            document.getElementById("mobile-mic").style.opacity = "1";
+    }
+
+    function mobile_start_voice() {
+            mobile_recognizer.start();
+            mobile_recognizing = true;
+    }
+
+
+    function mobile_toggle() {
+        if (mobile_recognizing) {
+                mobile_stop_voice();
+        }
+        else {
+            mobile_start_voice();
+        }
+    }
+
+
+    window.MobileSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition || null;
+    var mobile_recognizing = false;
+    var mobile_speechResult = [];
+    var mobile_speechResultCount = 0;
+    var mobile_saidResult = '';
+
+    if (window.MobileSpeechRecognition == null) {
+        console.log('Speech Recognition not supported in this browser');
+    }
+    else {
+        var mobile_recognizer = new webkitSpeechRecognition();
+        mobile_recognizer.continuous = true;
+        mobile_recognizer.interimResults = false;
+
+        mobile_recognizer.onresult = function (event) {
+            console.log('Options are: ');
+            for (var i = event.resultIndex; i < event.results.length; i++) {
+                console.log(event.results);
+                if (event.results[i].isFinal) {
+                    console.log('We have a speech result:' + event.results[i][0].transcript);
+                    mobile_saidResult = event.results[i][0].transcript;
+                    document.getElementById("mobile-user-speech").textContent = '"' + mobile_saidResult + '"';
+                }
+            }
+        }
+    }
+
+    mobile_recognizer.onstart = function (event) {
+            change_mic();
+            document.getElementById("mobile-mic-modal").style.top = "0";
+            document.getElementById("mobile-mic").style.opacity = "0";
+    }
+
+    mobile_recognizer.onstop = function (event) {
+        console.log("recog stop");
+    }
+
+    mobile_recognizer.onerror = function (event) {
+        if (event.error == 'no-speech') {
+            console.log("no speech");
+        }
+        if (event.error == 'audio-capture') {
+            console.log("audio capture");
+        }
+        if (event.error == 'not-allowed') {
+            console.log("not allowed");
+        }
+    };
+
+</script>
+
+
+<script>
+
+    $(document).ready(function () {
+        $('.modal-trigger').leanModal();
+        get_unique_key();
+    });
+
+    function close_modal() {
+        $('#booking-modal').closeModal();
+    }
+
+    window.addEventListener("load", function () {
+        document.getElementById("hotel-card").style.left = "calc(100% - 5rem)";
+        document.getElementById("bottom-arrow").style.transform = "rotate(180deg)";
+        document.getElementById("top-arrow").style.transform = "rotate(180deg)";
+        setTimeout(function () {
+            document.getElementById("hotel-card").style.left = "calc(100% - 2.5rem)";
+            document.getElementById("bottom-arrow").style.transform = "rotate(0deg)";
+            document.getElementById("top-arrow").style.transform = "rotate(0deg)";
+        }, 3000);
+    });
+
+    window.card_lock = false;
+    window.hotel_url = "";
+
+    document.getElementById("hotel-card").addEventListener("click", function (e) {
+
+        e = e || window.event;
+        var target = e.target || e.srcElement;
+        if (target.id == "book-now-btn") {
+            if (window.hotel_url != "") {
+                window.open(window.hotel_url);
+            }
+        }
+        else {
+            if (window.card_lock) {
+                document.getElementById("hotel-card").style.left = "calc(100% - 2.5rem)";
+                document.getElementById("bottom-arrow").style.transform = "rotate(0deg)";
+                document.getElementById("top-arrow").style.transform = "rotate(0deg)";
+                window.card_lock = false;
+            }
+            else {
+                document.getElementById("hotel-card").style.left = "calc(100% - 20rem)";
+                document.getElementById("bottom-arrow").style.transform = "rotate(180deg)";
+                document.getElementById("top-arrow").style.transform = "rotate(180deg)";
+                window.card_lock = true;
+            }
+        }
+    });
+
+    function change_mic() {
+        var iterator = 1;
+        var mic = document.getElementById("mic");
+        mic.style.animationName = "mic-visibility";
+        mic.setAttribute("src", "./imgs/mic" + iterator + ".png");
+        iterator++;
+        window.mic_timer = setInterval(function () {
+            if (iterator > 2) { iterator = 1; }
+                mic.setAttribute("src", "./imgs/mic" + iterator + ".png");
+            iterator++;
+        }, 1500);
+    }
+
+    
+
+
+    function to_title(input_str) {
+        var temp_list = input_str.split(" ");
+        var temp_str = "";
+        for (var i = 0; i < temp_list.length ; i++) {
+            var temp_word = temp_list[i];
+            temp_str += temp_word.substr(0, 1).toUpperCase() + temp_word.substr(1, temp_word.length);
+            temp_str += " ";
+        }
+        return temp_str.trim();
+    }
+
+
+
+    window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition || null;
+    var recognizing = false;
+    var speechResult = [];
+    var speechResultCount = 0;
+    var saidResult = '';
+
+    if (window.SpeechRecognition == null) {
+        console.log('Speech Recognition not supported in this browser');
+    }
+    else {
+        console.log("Speech Recongition available");
+        var recognizer = new webkitSpeechRecognition();
+        recognizer.continuous = true;
+        recognizer.interimResults = false;
+
+        recognizer.onresult = function (event) {
+            console.log('Options are: ');
+            for (var i = event.resultIndex; i < event.results.length; i++) {
+                console.log(event.results);
+                if (event.results[i].isFinal) {
+                    console.log('We have a speech result:' + event.results[i][0].transcript);
+                    saidResult = event.results[i][0].transcript;
+                    document.getElementById("response_text").value = saidResult;
+                    document.getElementById("response_text").focus();
+                    }
+
+                }
+            }
+        }
+
+    recognizer.onstop = function (event) {
+        console.log("recognition completed");
+    }
+
+
+    recognizer.onstart = function (event) {
+        console.log("recognition started");
+        document.getElementById("allow-arrow").style.display = "none";
+        change_mic();
+        document.getElementById("ip-text").style.width = "89vw";
+        document.getElementById("response_text").style.display = "none";
+        document.getElementById("response_text").value = "";
+        document.getElementById("alert_text").style.display = "block";
+        document.getElementById("alert_text").style.animationName = "text-flash";
+        document.getElementById("powered-by-google-container").style.opacity = "1";
+    };
+
+    recognizer.onerror = function (event) {
+        if (event.error == 'no-speech') {
+            console.log("no speech");
+        }
+        if (event.error == 'audio-capture') {
+            console.log("audio capture");
+        }
+        if (event.error == 'not-allowed') {
+            console.log("not allowed");
+        }
+    };
+
+
+    function toggle() {
+        if (recognizing) {
+            recognizer.stop();
+            recognizing = false;
+            clearInterval(window.mic_timer);
+            document.getElementById("mic").style.animationName = "";
+            document.getElementById("alert_text").style.animationName = "";
+            document.getElementById("alert_text").style.opacity = "0";
+            document.getElementById("alert_text").style.display = "none";
+            document.getElementById("response_text").style.display = "block";
+            document.getElementById("mic").setAttribute("src", "./imgs/mic0.png");
+            console.log("recognition stopped");
+        }
+        else {
+            document.getElementById("allow-arrow").style.display = "block";
+            recognizer.start();
+            recognizing = true;
+            console.log("recognition initiated");
+        }
+    }
+
+
+    function get_unique_key() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://leova-platform.appspot.com/unikeygen");
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                window.unique_key = xhr.responseText;
+            }
+        };
+    }
+
+
+    window.flag_change = false;
+    window.pop_flag = false;
+
+    function submit() {
+        document.getElementById("passenger-card").style.top = "-20%";
+        document.getElementById("hipmunk-card").style.left = "-25%";
+        document.getElementById("expedia-card").style.left = "-25%";
+        document.getElementById("kayak-card").style.left = "-25%";
+        document.getElementById("hipmunk-card").classList.remove("hipmunk-bounce");
+        document.getElementById("expedia-card").classList.remove("expedia-bounce");
+        document.getElementById("kayak-card").classList.remove("kayak-bounce");
+        document.getElementById("passenger-detail").textContent = "";
+        document.getElementById("hotel-card").style.left = "110%";
+        document.getElementById("pop_bubble").style.opacity = "0";
+        document.getElementById("pop_triangle").style.opacity = "0";
+
+        var multi_city_card = document.getElementsByClassName("base-class")[2].children;
+        for (var i = 0 ; i < 4; i++) {
+            multi_city_card[i + 2].children[0].innerHTML = "";
+        }
+
+        if (window.flag_change) {
+            document.getElementsByClassName("base-class")[0].style.top = "-55%"
+            document.getElementsByClassName("base-class")[1].style.top = "-55%"
+            document.getElementsByClassName("base-class")[0].style.left = "38%"
+        }
+
+        document.getElementsByClassName("base-class")[2].style.top = "-55%";
+        var user_speech = document.getElementById("response_text").value;
+        document.getElementById("response_text").value = "";
+        var channel_id = window.unique_key;
+        var tzo = new Date().getTimezoneOffset();
+
+        var data = JSON.stringify({
+            "q": user_speech,
+            "api_key": window.api_key,
+            "channel": channel_id,
+            "tzo": tzo
+        });
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", window.endpoint);
+        xhr.setRequestHeader("content-type", "application/json");
+        xhr.send(data);
+        xhr.onreadystatechange = function(){
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var jresp = xhr.responseText;
+                console.log(jresp);
+                window.resp = JSON.parse(jresp);
+                query("hipmunk", window.resp);
+                query("expedia", window.resp);
+                query("kayak", window.resp);
+                parseToExpedia(window.resp);
+                var cards_list =document.getElementsByClassName("base-class");
+                cards_list[0].classList.add("one-way");
+                
+                if (resp["FlightType"] == "One-Way") {
+                    document.getElementsByClassName("base-class")[0].style.top = "-55%"
+                    document.getElementsByClassName("base-class")[1].style.top = "-55%"
+                    setTimeout(function () {
+                        document.getElementsByClassName("base-class")[0].style.left = "38%"
+                    }, 800);
+                }
+
+                if (resp["FlightType"] == "Multi-City") {
+                    multi_city();
+                }
+                else {
+                    if (resp["FlightType"] == "Return") {
+                        cards_list[1].classList.add("two-way");
+                    }
+                    one_way_div();
+                }
+            }
+        };
+    }
+
+    function one_way_div() {
+        if (jQuery.isEmptyObject(window.resp["error_dict"])) {
+            var trip1_card = document.getElementsByClassName("base-class")[0].children;
+            if (window.innerHeight < 770) {
+                document.getElementsByClassName("base-class")[0].style.top = "7%"
+            }
+            else {
+                document.getElementsByClassName("base-class")[0].style.top = "15%"
+            }
+            document.getElementsByClassName("base-class")[2].style.top = "-55%";
+            var resp = window.resp;
+            document.getElementById("hotel-card").style.left = "calc(100% - 2.5rem)";
+            document.getElementById("passenger-card").style.top = "-2%";
+            document.getElementById("hipmunk-card").style.left = "15%";
+            document.getElementById("expedia-card").style.left = "40%";
+            document.getElementById("kayak-card").style.left = "65%";
+            document.getElementById("hipmunk-card").classList.add("hipmunk-bounce");
+            document.getElementById("expedia-card").classList.add("expedia-bounce");
+            document.getElementById("kayak-card").classList.add("kayak-bounce");
+            if (window.pop_flag == false) {
+                document.getElementById("pop_bubble").style.opacity = "1";
+                document.getElementById("pop_triangle").style.opacity = "1";
+                setTimeout(function () {
+                    document.getElementById("pop_bubble").style.opacity = "0";
+                    document.getElementById("pop_triangle").style.opacity = "0";
+                    window.pop_flag = true;
+                    document.getElementById("pop_bubble").style.display = "none";
+                    document.getElementById("pop_triangle").style.display = "none";
+                }, 3000);
+            }
+
+            var text_str = resp["text"];
+            var passenger_str = text_str.substr(text_str.indexOf('">') + 2);
+            document.getElementById("passenger-detail").textContent = passenger_str.substr(0, passenger_str.indexOf("<"));
+            var passenger = passenger_str.substr(0, passenger_str.indexOf("<"));
+            if (passenger.search(":") > -1) {
+                passenger = passenger.substr(passenger.indexOf(":") + 1, passenger.length);
+            }
+            var destination_str = resp["hotel_dict"]["destination"]
+            document.getElementById("hotel-city").textContent = to_title(destination_str);
+            var from_date = resp["hotel_dict"]["from_date"];
+            from_date = from_date.replace(" 2015", " '15");
+            from_date = from_date.replace(" 2016", " '16");
+            var to_date = resp["hotel_dict"]["to_date"];
+            to_date = to_date.replace(" 2015", " '15");
+            to_date = to_date.replace(" 2016", " '16");
+            document.getElementById("hotel-from").textContent = from_date.substr(4,from_date.length);
+            document.getElementById("hotel-to").textContent = to_date.substr(4,to_date.length);
+            document.getElementById("hotel-passenger").textContent = "for " + passenger;
+            var trips_list = resp["trips"];
+            trip1_card[5].children[0].textContent = trips_list[0]["date1"];
+
+            var from_city_str = trips_list[0]["from_city_name"];
+            trip1_card[2].children[0].textContent = to_title(from_city_str) +" (" + trips_list[0]["from_city_code"]+ ") ";
+            
+
+            var to_city_str = trips_list[0]["to_city_name"];
+            trip1_card[4].children[0].textContent = to_title(to_city_str) + " ("+ trips_list[0]["to_city_code"]+") ";
+            window.flag_change = true;
+            if (resp["FlightType"] == "Return") {
+                two_way_div();
+            }
+        }
+        else {
+            document.getElementsByClassName("multi-city")[0].style.width = "40%";
+            document.getElementsByClassName("base-class")[0].style.top = "-55%";
+            document.getElementsByClassName("base-class")[1].style.top = "-55%";
+            document.getElementsByClassName("base-class")[2].style.top = "15%";
+            if (window.innerHeight < 770) {
+                document.getElementsByClassName("base-class")[2].style.top = "7%";
+            }
+            else {
+                document.getElementsByClassName("base-class")[2].style.top = "15%";
+            }
+            document.getElementsByClassName("base-class")[2].children[0].children[0].textContent = "Error " + window.resp["error_dict"]["error_code"];
+            document.getElementsByClassName("base-class")[2].children[2].children[0].textContent = window.resp["error_dict"]["error_message"];
+        }
+    }
+
+
+    function two_way_div() {
+        var trip2_card = document.getElementsByClassName("base-class")[1].children;
+        setTimeout(function () {
+            document.getElementsByClassName("one-way")[0].style.left = "20%";
+            document.getElementsByClassName("base-class")[1].style.top = "15%";
+            if (window.innerHeight < 770) {
+                document.getElementsByClassName("base-class")[1].style.top = "7%";
+            }
+            else {
+                document.getElementsByClassName("base-class")[1].style.top = "15%";
+            }
+        },800)
+         
+            var resp = window.resp;
+            var trips_list = resp["trips"];
+            trip2_card[5].children[0].textContent = trips_list[0]["date2"];
+
+            var from_city_str = trips_list[0]["from_city_name"];
+            trip2_card[4].children[0].textContent = to_title(from_city_str) + " (" + trips_list[0]["from_city_code"] + ") ";
+
+
+            var to_city_str = trips_list[0]["to_city_name"];
+            trip2_card[2].children[0].textContent = to_title(to_city_str) + " (" + trips_list[0]["to_city_code"] + ") ";
+            window.flag_change = true;
+    }
+
+    
+    function multi_city() {
+        document.getElementsByClassName("multi-city")[0].style.width = "auto";
+        var multi_city_card = document.getElementsByClassName("base-class")[2].children;
+        multi_city_card[0].children[0].textContent = "Multi City Trips";
+        document.getElementsByClassName("base-class")[0].style.top = "-55%";
+        document.getElementsByClassName("base-class")[1].style.top = "-55%";
+        document.getElementsByClassName("base-class")[2].style.top = "15%";
+        if (window.innerHeight < 770) {
+            document.getElementsByClassName("base-class")[2].style.top = "7%";
+        }
+        else {
+            document.getElementsByClassName("base-class")[2].style.top = "15%";
+        }
+        document.getElementsByClassName("base-class")[2].children[2].children[0].textContent = "";
+        var resp = window.resp;
+        var trips_list = resp["trips"];
+
+        for (var i = 0 ; i < trips_list.length; i++)
+        {
+            if (i + 2 > 5) {
+                break;
+            }
+            var from_city_str = trips_list[i]["from_city_name"]
+            var from_city = to_title(from_city_str) + " (" + trips_list[i]["from_city_code"] + ") ";
+            
+            var to_city_str = trips_list[i]["to_city_name"]
+            var to_city = to_title(to_city_str) + " (" + trips_list[i]["to_city_code"] + ") ";
+            
+
+            multi_city_card[i + 2].children[0].innerHTML = from_city + " to " + to_city + " , <span class='trip-card-date'>" + trips_list[i]["date1"]+"</span>";
+        }
+        var text_str = resp["people_dict"];
+        var adult_count = text_str["adult"];
+        var child_count = text_str["child"];
+
+        if (adult_count > 1) {
+            var adult_text = adult_count + " adults";
+        }
+        else {
+            var adult_text = adult_count + " adult";
+        }
+        if (child_count > 1) {
+            var child_text = " and " + child_count + " children";
+        }
+        else if (child_count == 1) {
+            var child_text = " and " + child_count + " child";
+        }
+        else {
+            var child_text = "";
+        }
+        document.getElementById("passenger-detail").textContent = "for " + adult_text + child_text;
+        document.getElementById("passenger-card").style.top = "-2%";
+        document.getElementById("hipmunk-card").style.left = "15%";
+        document.getElementById("expedia-card").style.left = "40%";
+        document.getElementById("kayak-card").style.left = "65%";
+        document.getElementById("hipmunk-card").classList.add("hipmunk-bounce");
+        document.getElementById("expedia-card").classList.add("expedia-bounce");
+        document.getElementById("kayak-card").classList.add("kayak-bounce");
+        if (window.pop_flag == false) {
+            document.getElementById("pop_bubble").style.opacity = "1";
+            document.getElementById("pop_triangle").style.opacity = "1";
+            setTimeout(function () {
+                document.getElementById("pop_bubble").style.opacity = "0";
+                document.getElementById("pop_triangle").style.opacity = "0";
+                window.pop_flag = true;
+                document.getElementById("pop_bubble").style.display = "none";
+                document.getElementById("pop_triangle").style.display = "none";
+            }, 3000);
+        }
+
+    }
+
+
+    /* Code for showing results on vendor sites */
+    function parseDate(vendor, params) {
+        var a = new Date(params);
+        var params_day = a.getDate();
+        var params_month = a.getMonth() + 1
+        var params_year = a.getFullYear();
+        if (params_month.toString().length == 1) {
+            var a = params_month.toString().split('');
+            a.push('0');
+            params_month = a.reverse().join('');
+        }
+        if (params_day.toString().length == 1) {
+            var b = params_day.toString().split('');
+            b.push('0');
+            params_day = b.reverse().join('');
+        }
+        if (vendor == 'expedia') {
+            var ret = params_month + '/' + params_day + '/' + params_year;
+        } else {
+            var ret = params_year + '-' + params_month + '-' + params_day;
+        }
+        return ret;
+    }
+
+    function query(vendor, params) {
+        if (params['FlightType'] === "One-Way") {
+            var f = params['trips'][0]['from_city_code'];
+            var t = params['trips'][0]['to_city_code'];
+            var p = params['people_dict']['adult'];
+            var children = params['people_dict']['child'];
+
+            if (vendor == 'hipmunk') {
+                var d = parseDate('hipmunk', params['trips'][0]['date1']);
+                var url = 'https://www.hipmunk.com/flights#f=' + f + ';t=' + t + ';d=' + d + ';p=' + p + ';children=' + children;
+                document.getElementById(vendor + "-card").addEventListener("click", function () {
+                    window.open(url);
+                });
+            }
+            else if (vendor == 'kayak') {
+                var d = parseDate('kayak', params['trips'][0]['date1']);
+                if (children > 0) {
+                    var temp = '/children';
+                    for (var i = 0; i < Number(children) ; i++) {
+                        temp += '-11';
+                    }
+                    var url = 'http://www.kayak.com/flights/' + f + '-' + t + '/' + d + '/' + p + 'adults' + temp;
+                    document.getElementById(vendor + "-card").addEventListener("click", function () {
+                        window.open(url);
+                    });
+                }
+                else if (children <= 0) {
+                    var url = 'http://www.kayak.com/flights/' + f + '-' + t + '/' + d + '/' + p + 'adults';
+                    document.getElementById(vendor + "-card").addEventListener("click", function () {
+                        window.open(url);
+                    });
+                }
+            }
+            else if (vendor == 'expedia') {
+                d = parseDate('expedia', params['trips'][0]['date1']);
+                var url = 'https://www.expedia.com/Flights-Search?trip=oneway&leg1=from:' + f + ',to:' + t + ',departure:' + d + 'TANYT&passengers=children:' + children + ',adults:' + p + '&mode=search';
+                document.getElementById(vendor + "-card").addEventListener("click", function () {
+                    window.open(url);
+                });
+            }
+        }
+        else if (params['FlightType'] === "Return") {
+            var f = params['trips'][0]['from_city_code'];
+            var t = params['trips'][0]['to_city_code'];
+            var p = params['people_dict']['adult'];
+            var children = params['people_dict']['child'];
+
+            if (vendor == 'hipmunk') {
+                var d = parseDate('hipmunk', params['trips'][0]['date1']);
+                var r = parseDate('hipmunk', params['trips'][0]['date2']);
+                var url = 'https://www.hipmunk.com/flights#f=' + f + ';t=' + t + ';d=' + d + ';r=' + r + ';p=' + p + ';children=' + children;
+                document.getElementById(vendor + "-card").addEventListener("click", function () {
+                    window.open(url);
+                });
+            }
+            else if (vendor == 'kayak') {
+                var d = parseDate('kayak', params['trips'][0]['date1']);
+                var r = parseDate('kayak', params['trips'][0]['date2']);
+                if (children > 0) {
+                    var temp = '/children';
+                    for (var i = 0; i < Number(children) ; i++) {
+                        temp += '-11';
+                    }
+                    var url = 'http://www.kayak.com/flights/' + f + '-' + t + '/' + d + '/' + r + '/' + p + 'adults' + temp;
+                    document.getElementById(vendor + "-card").addEventListener("click", function () {
+                        window.open(url);
+                    });
+                }
+                else if (children <= 0) {
+                    var url = 'http://www.kayak.com/flights/' + f + '-' + t + '/' + d + '/' + r + '/' + p + 'adults';
+                    document.getElementById(vendor + "-card").addEventListener("click", function () {
+                        window.open(url);
+                    });
+                }
+            }
+            else if (vendor == 'expedia') {
+                var d = parseDate('expedia', params['trips'][0]['date1']);
+                var r = parseDate('expedia', params['trips'][0]['date2']);
+                var url = 'https://www.expedia.com/Flights-Search?trip=roundtrip&leg1=from:' + f + ',to:' + t + ',departure:' + d + 'TANYT&leg2=from:' + t + ',to:' + f + ',departure:' + r + 'TANYT&passengers=children:' + children + ',adults:' + p + '&mode=search';
+                document.getElementById(vendor + "-card").addEventListener("click", function () {
+                    window.open(url);
+                });
+            }
+        }
+        else if (params['FlightType'] === "Multi-City") {
+            var p = params['people_dict']['adult'];
+            var children = params['people_dict']['child'];
+            if (vendor == 'hipmunk') {
+                var url = 'https://www.hipmunk.com/flights#';
+                for (var i = 0; i < params['trips'].length; i++) {
+                    var d = parseDate('hipmunk', params['trips'][i]['date1']);
+                    var f = params['trips'][i]['from_city_code'];
+                    var t = params['trips'][i]['to_city_code'];
+                    url += 'f' + i + '=' + f + ';t' + i + '=' + t + ';d' + i + '=' + d + ';';
+                }
+                url += 'p=' + p + ';children=' + children;
+                document.getElementById(vendor + "-card").addEventListener("click", function () {
+                    window.open(url);
+                });
+            }
+            else if (vendor == 'kayak') {
+                var url = 'http://www.kayak.com/flights';
+                for (var i = 0; i < params['trips'].length; i++) {
+                    var d = parseDate('kayak', params['trips'][i]['date1']);
+                    var f = params['trips'][i]['from_city_code'];
+                    var t = params['trips'][i]['to_city_code'];
+                    url += '/' + f + '-' + t + '/' + d;
+                }
+                if (children > 0) {
+                    var temp = '/children';
+                    for (var i = 0; i < Number(children) ; i++) {
+                        temp += '-11';
+                    }
+                    url += '/' + p + 'adults' + temp;
+                    document.getElementById(vendor + "-card").addEventListener("click", function () {
+                        window.open(url);
+                    });
+                }
+                else if (children <= 0) {
+                    url += '/' + p + 'adults';
+                    document.getElementById(vendor + "-card").addEventListener("click", function () {
+                        window.open(url);
+                    });
+                }
+            }
+            else if (vendor == 'expedia') {
+                var url = 'https://www.expedia.com/Flights-Search?trip=multi';
+                for (var i = 0; i < params['trips'].length; i++) {
+                    var d = parseDate('expedia', params['trips'][i]['date1']);
+                    var f = params['trips'][i]['from_city_code'];
+                    var t = params['trips'][i]['to_city_code'];
+                    var leg = i + 1;
+                    url += '&leg' + leg + '=from:' + f + ',to:' + t + ',departure:' + d + 'TANYT';
+                }
+                url += '&passengers=children:' + children + ',adults:' + p + '&mode=search';
+                document.getElementById(vendor + "-card").addEventListener("click", function () {
+                    window.open(url);
+                    
+                });
+            }
+        }
+    }
+    /* Code ends here */
+
+
+    function parseToExpedia(params) {
+        if (params['FlightType'] != "Multi-City" && params['FlightType'] != "") {
+        var date1 = parseDate_hotel(params['hotel_dict']['from_date']);
+        var dDate = date1['month'] + '/' + date1['date'] + '/' + date1['year'];
+        var date2 = parseDate_hotel(params['hotel_dict']['to_date']);
+        var rDate = date2['month'] + '/' + date2['date'] + '/' + date2['year'];
+
+        var sTo = params['hotel_dict']['destination'];
+        var temp = sTo.split(' ');
+        for (var i = 0; i < temp.length; i++) {
+            temp[i] = temp[i].charAt(0).toUpperCase() + temp[i].slice(1, temp[i].length);
+        }
+        sTo = temp.join(' ');
+
+        var adult = params['people_dict']['adult'];
+        var child = params['people_dict']['child'];
+        var url = 'https://www.expedia.com/Hotel-Search?#&destination=' + sTo + ' (and vicinity), United States of America&startDate=' + dDate + '&endDate=' + rDate + '&adults=' + adult + '&children=' + child;
+        window.hotel_url = url;
+        }
+    }
+
+    function parseDate_hotel(params) {
+        var a = new Date(params);
+        var params_day = a.getDate();
+        var params_month = a.getMonth() + 1
+        var params_year = a.getFullYear();
+        if (params_month.toString().length == 1) {
+            var a = params_month.toString().split('');
+            a.push('0');
+            params_month = a.reverse().join('');
+        }
+        if (params_day.toString().length == 1) {
+            var b = params_day.toString().split('');
+            b.push('0');
+            params_day = b.reverse().join('');
+        }
+        var ret = {
+            'date': params_day,
+            'month': params_month,
+            'year': params_year
+        };
+        return ret;
+    }
+
+</script>
+</body>
+</html>
