@@ -1249,13 +1249,14 @@
         setTimeout(function () {
             document.getElementById("mobile-user-speech-modal").style.top = "-1rem";
             var user_speech = mobile_saidResult;
+            var tzo = new Date().getTimezoneOffset();
             var channel_id = window.unique_key;
 
             var data = JSON.stringify({
                 "q": user_speech,
                 "api_key": window.api_key,
                 "channel": channel_id,
-                "tzo": "-330"
+                "tzo": tzo
             });
 
             var xhr = new XMLHttpRequest();
@@ -1725,12 +1726,14 @@
         document.getElementsByClassName("base-class")[2].style.top = "-55%";
         var user_speech = document.getElementById("response_text").value;
         document.getElementById("response_text").value = "";
+        var tzo = new Date().getTimezoneOffset();
         var channel_id = window.unique_key;
+
         var data = JSON.stringify({
             "q": user_speech,
             "api_key": window.api_key,
             "channel": channel_id,
-            "tzo": "-330"
+            "tzo": tzo
         });
 
         var xhr = new XMLHttpRequest();
