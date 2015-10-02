@@ -11,23 +11,23 @@
     <link rel="stylesheet" href="https://leovaresource8.appspot.com/eframeworks/css/materialize.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Montserrat' rel='stylesheet' type='text/css' />
-    <link rel="apple-touch-icon" sizes="57x57" href="./favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="./favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="./favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="./favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="./favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="./favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="./favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="./favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="./favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="./favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
-    <link rel="manifest" href="./favicons/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="./favicons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="57x57" href="./favicons/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="./favicons/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="./favicons/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="./favicons/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicons/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicons/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicons/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicons/apple-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./favicons/android-icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicons/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png" />
+    <link rel="manifest" href="./favicons/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="./favicons/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
 </head>
 <body>
 
@@ -126,7 +126,7 @@
 </div>
 <div id="hipmunk-card" class="card-panel site-card  hoverable">
     <div class="row" style="margin:0;">
-        <div id="hipmunk_url" class="col s12 center-align "><a> See this on Hipmunk </a></div>
+        <div id="hipmunk-url" class="col s12 center-align "><a> See this on Hipmunk </a></div>
     </div>
 </div>
 <div id="expedia-card" class="card-panel site-card hoverable">
@@ -180,7 +180,7 @@
 
 <div id="pop_bubble" class="hide-on-med-and-down valign-wrapper">
     <img id="pop_triangle" src="./imgs/bubble_triangle.png" />
-    <div style="width:100%" class="center-align"> Please Enable Pop-ups</div>
+    <div style="width:100%" class="center-align">This will open up a new window, so please disable popup blockers</div>
 </div>
 
 
@@ -743,12 +743,14 @@
         background-color:white;
         font-size:1.2rem;
         color:black;
+        padding:10px;
         position:absolute;
         left:75%;
         top:35%;
         border-radius:20px;
         opacity:0;
         transition:all 0.3s;
+        box-shadow:3px -3px 10px rgba(0,0,0,0.5);
     }
 
     #pop_triangle{
@@ -862,13 +864,9 @@
         100%{left:40%;}
     }
 
-
-
-
     #kayak-card {
         left:-25%;
     }
-
 
     .kayak-bounce {
       -webkit-animation:bounce_kayak 2s 1;
@@ -1210,9 +1208,9 @@
 </style>
 
 <script>
-    // Enter your api key and endpoint here
-    window.api_key = "";
-    window.endpoint = "";
+    // enter api key and endpoint here
+    window.api_key = '';
+    window.endpoint = '';
 
 
     window.mobile_hotel_card_toggle = true;
@@ -1251,14 +1249,13 @@
         setTimeout(function () {
             document.getElementById("mobile-user-speech-modal").style.top = "-1rem";
             var user_speech = mobile_saidResult;
-            var tzo = new Date().getTimezoneOffset();
             var channel_id = window.unique_key;
 
             var data = JSON.stringify({
                 "q": user_speech,
                 "api_key": window.api_key,
                 "channel": channel_id,
-                "tzo": tzo
+                "tzo": "-330"
             });
 
             var xhr = new XMLHttpRequest();
@@ -1546,6 +1543,9 @@
 
     window.card_lock = false;
     window.hotel_url = "";
+    window.hipmunk_url = "";
+    window.expedia_url = "";
+    window.kayak_url = "";
 
     document.getElementById("hotel-card").addEventListener("click", function (e) {
 
@@ -1726,13 +1726,11 @@
         var user_speech = document.getElementById("response_text").value;
         document.getElementById("response_text").value = "";
         var channel_id = window.unique_key;
-        var tzo = new Date().getTimezoneOffset();
-
         var data = JSON.stringify({
             "q": user_speech,
             "api_key": window.api_key,
             "channel": channel_id,
-            "tzo": tzo
+            "tzo": "-330"
         });
 
         var xhr = new XMLHttpRequest();
@@ -1986,9 +1984,7 @@
             if (vendor == 'hipmunk') {
                 var d = parseDate('hipmunk', params['trips'][0]['date1']);
                 var url = 'https://www.hipmunk.com/flights#f=' + f + ';t=' + t + ';d=' + d + ';p=' + p + ';children=' + children;
-                document.getElementById(vendor + "-card").addEventListener("click", function () {
-                    window.open(url);
-                });
+                window.hipmunk_url = url;
             }
             else if (vendor == 'kayak') {
                 var d = parseDate('kayak', params['trips'][0]['date1']);
@@ -1998,23 +1994,17 @@
                         temp += '-11';
                     }
                     var url = 'http://www.kayak.com/flights/' + f + '-' + t + '/' + d + '/' + p + 'adults' + temp;
-                    document.getElementById(vendor + "-card").addEventListener("click", function () {
-                        window.open(url);
-                    });
+                    window.kayak_url = url;
                 }
                 else if (children <= 0) {
                     var url = 'http://www.kayak.com/flights/' + f + '-' + t + '/' + d + '/' + p + 'adults';
-                    document.getElementById(vendor + "-card").addEventListener("click", function () {
-                        window.open(url);
-                    });
+                    window.kayak_url = url;
                 }
             }
             else if (vendor == 'expedia') {
                 d = parseDate('expedia', params['trips'][0]['date1']);
                 var url = 'https://www.expedia.com/Flights-Search?trip=oneway&leg1=from:' + f + ',to:' + t + ',departure:' + d + 'TANYT&passengers=children:' + children + ',adults:' + p + '&mode=search';
-                document.getElementById(vendor + "-card").addEventListener("click", function () {
-                    window.open(url);
-                });
+                window.expedia_url = url;
             }
         }
         else if (params['FlightType'] === "Return") {
@@ -2027,9 +2017,7 @@
                 var d = parseDate('hipmunk', params['trips'][0]['date1']);
                 var r = parseDate('hipmunk', params['trips'][0]['date2']);
                 var url = 'https://www.hipmunk.com/flights#f=' + f + ';t=' + t + ';d=' + d + ';r=' + r + ';p=' + p + ';children=' + children;
-                document.getElementById(vendor + "-card").addEventListener("click", function () {
-                    window.open(url);
-                });
+                window.hipmunk_url = url;
             }
             else if (vendor == 'kayak') {
                 var d = parseDate('kayak', params['trips'][0]['date1']);
@@ -2040,24 +2028,18 @@
                         temp += '-11';
                     }
                     var url = 'http://www.kayak.com/flights/' + f + '-' + t + '/' + d + '/' + r + '/' + p + 'adults' + temp;
-                    document.getElementById(vendor + "-card").addEventListener("click", function () {
-                        window.open(url);
-                    });
+                    window.kayak_url = url;
                 }
                 else if (children <= 0) {
                     var url = 'http://www.kayak.com/flights/' + f + '-' + t + '/' + d + '/' + r + '/' + p + 'adults';
-                    document.getElementById(vendor + "-card").addEventListener("click", function () {
-                        window.open(url);
-                    });
+                    window.kayak_url = url;
                 }
             }
             else if (vendor == 'expedia') {
                 var d = parseDate('expedia', params['trips'][0]['date1']);
                 var r = parseDate('expedia', params['trips'][0]['date2']);
                 var url = 'https://www.expedia.com/Flights-Search?trip=roundtrip&leg1=from:' + f + ',to:' + t + ',departure:' + d + 'TANYT&leg2=from:' + t + ',to:' + f + ',departure:' + r + 'TANYT&passengers=children:' + children + ',adults:' + p + '&mode=search';
-                document.getElementById(vendor + "-card").addEventListener("click", function () {
-                    window.open(url);
-                });
+                window.expedia_url = url;
             }
         }
         else if (params['FlightType'] === "Multi-City") {
@@ -2072,9 +2054,7 @@
                     url += 'f' + i + '=' + f + ';t' + i + '=' + t + ';d' + i + '=' + d + ';';
                 }
                 url += 'p=' + p + ';children=' + children;
-                document.getElementById(vendor + "-card").addEventListener("click", function () {
-                    window.open(url);
-                });
+                window.hipmunk_url = url;
             }
             else if (vendor == 'kayak') {
                 var url = 'http://www.kayak.com/flights';
@@ -2090,15 +2070,11 @@
                         temp += '-11';
                     }
                     url += '/' + p + 'adults' + temp;
-                    document.getElementById(vendor + "-card").addEventListener("click", function () {
-                        window.open(url);
-                    });
+                    window.kayak_url = url;
                 }
                 else if (children <= 0) {
                     url += '/' + p + 'adults';
-                    document.getElementById(vendor + "-card").addEventListener("click", function () {
-                        window.open(url);
-                    });
+                    window.kayak_url = url;
                 }
             }
             else if (vendor == 'expedia') {
@@ -2111,10 +2087,7 @@
                     url += '&leg' + leg + '=from:' + f + ',to:' + t + ',departure:' + d + 'TANYT';
                 }
                 url += '&passengers=children:' + children + ',adults:' + p + '&mode=search';
-                document.getElementById(vendor + "-card").addEventListener("click", function () {
-                    window.open(url);
-                    
-                });
+                window.expedia_url = url;
             }
         }
     }
@@ -2165,6 +2138,23 @@
         return ret;
     }
 
+    document.getElementById("hipmunk-card").addEventListener("click", function () {
+        if (window.hipmunk_url != "") {
+            window.open(window.hipmunk_url);
+        }
+    });
+
+    document.getElementById("expedia-card").addEventListener("click", function () {
+        if (window.expedia_url != "") {
+            window.open(window.expedia_url);
+        }
+    });
+
+    document.getElementById("kayak-card").addEventListener("click", function () {
+        if (window.hipmunk_url != "") {
+            window.open(window.kayak_url);
+        }
+    });
 </script>
 </body>
 </html>
